@@ -82,7 +82,7 @@ public class RoleController {
 
         for (TenantDTO tenantDto : tenantDtos) {
             roleDefs.addAll(roleDefManager.find(
-                    "from RoleDef where tenantInfo=?", tenantDto.getId()));
+                    "from RoleDef where tenantId=?", tenantDto.getId()));
         }
 
         List<Role> roles = roleManager.findBy("tenantId",
